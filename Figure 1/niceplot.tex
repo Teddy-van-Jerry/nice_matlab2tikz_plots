@@ -1,0 +1,67 @@
+% This file was created by matlab2tikz.
+%
+\documentclass[tikz]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{grffile}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+\usepackage{amsmath}
+
+\usepackage{times}
+\tikzset{every picture/.append style={line join=round,line cap=round,}}
+\tikzstyle{solid}=[dash pattern=]
+\tikzstyle{dotted}=[dash pattern=on 0.0\pgflinewidth off 2.5\pgflinewidth]
+\tikzstyle{dashed}=[dash pattern=on 4.0\pgflinewidth off 3.0\pgflinewidth]
+\tikzstyle{dashdotted}=[dash pattern=on 0.0\pgflinewidth off 2.0\pgflinewidth on 3.0\pgflinewidth off 2.0\pgflinewidth]
+\pgfplotsset{every tick label/.append style={font=\Large}}
+\pgfplotsset{every axis legend/.append style={font=\large}}
+\pgfplotsset{every axis label/.append style={font=\Large}}
+\begin{document}
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=8cm,
+height=5cm,
+at={(0cm,0cm)},
+scale only axis,
+xmin=5,
+xmax=8.5,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\nu\ (10^{14}Hz)$},
+ymin=-2,
+ymax=-0.6,
+ylabel style={font=\color{white!15!black}},
+ylabel={$U\ (V)$},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Turn On Voltage},
+xmajorgrids,
+ymajorgrids,
+legend style={legend cell align=left, align=left, draw=white!15!black},
+legend style={nodes={scale=0.8},draw=black,thick},
+every outer y axis line/.append style={black,very thick}
+]
+\addplot [color=blue, only marks, mark=*, mark options={solid, blue}]
+  table[row sep=crcr]{%
+5.196	-0.654\\
+5.49	-0.782\\
+6.879	-1.323\\
+7.407	-1.546\\
+8.214	-1.867\\
+};
+\addlegendentry{Data Point}
+
+\addplot [color=red]
+  table[row sep=crcr]{%
+5.196	-0.657467704102979\\
+8.214	-1.86561485163088\\
+};
+\addlegendentry{Turn On Voltage}
+
+\end{axis}
+\end{tikzpicture}%
+\end{document}
